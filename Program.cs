@@ -1,20 +1,46 @@
 ﻿using System;
 
-namespace Method2
-{
-    class Program
-    {
-
-        int n1;
-        int n2;
+namespace Method2 {
+    class Program {
        
-        static void PrintMessage(int typeToPrint)
-        {
+        static void PrintMessage(int n1, int n2, string function){
+
+            bool divByZero = false;
+
+            if(n2 == 0){
+                divByZero = true;
+            }
+
+            switch (function.ToLower()){
+                case "add":
+                    Console.WriteLine("The sum of " + n1 + " and " + n2 + " is " + (n1 + n2));
+                    break;
+                case "sub":
+                    Console.WriteLine("The difference between " + n1 + " and " + n2 + " is " + (n1 - n2));
+                    break;
+                case "mult":
+                    Console.WriteLine("The profuct of " + n1 + " and " + n2 + " is " + (n1 * n2));
+                    break;
+                case "div":
+                    if(divByZero){
+                        Console.WriteLine("Error: Division by zero.");
+                    } else {
+                        Console.WriteLine("The quotient " + n1 + " and " + n2 + " is " + (n1 / n2));
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Unknown arithmatic function.");
+                    break;
+
+            }
+        }
+
+        static void Main(string[] args){
+            Console.WriteLine("Ayush Chauhan");
 
             int n1;
             int n2;
-            int resultplus;
-            string resultplus1;
+            string func;
            
             Console.WriteLine("Please Enter Your First Integer: ");
 
@@ -35,50 +61,11 @@ namespace Method2
 
             }
             Console.WriteLine("Your Second Integer: " + n2);
-
-
-            if (typeToPrint == 1)
-            {
-                resultplus = n1 + n2;
-                resultplus1 = resultplus.ToString();
-
-                Console.WriteLine("The sum of " + n1 + " and " + n2 + " is: " + resultplus1);
-            }
-
-            else if(typeToPrint == 2)
-            {
-                resultplus = n1 - n2;
-                resultplus1 = resultplus.ToString();
-
-                Console.WriteLine("The subtraction of " + n1 + " and " + n2 + " is: " + resultplus1);
-            }
-
-
-
-
-
-
-
-
-        }
-
-
-        
-        
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Ayush Chauhan");
-
-
             
+            Console.WriteLine("\nPlease Enter Your Arithmatic Operation(\"Add\", \"Sub\", \"Mul\", \"Div\"): ");
+            func = Console.ReadLine();
 
-            PrintMessage(1);
-            PrintMessage(2);
-
-
-
-
+            PrintMessage(n1, n2, func);
         }
-
     }
 }
