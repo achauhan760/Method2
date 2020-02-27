@@ -12,16 +12,16 @@ namespace Method2 {
             }
 
             switch (function.ToLower()){
-                case "add":
+                case "addition":
                     Console.WriteLine("The sum of " + n1 + " and " + n2 + " is " + (n1 + n2));
                     break;
-                case "sub":
+                case "subtraction":
                     Console.WriteLine("The difference between " + n1 + " and " + n2 + " is " + (n1 - n2));
                     break;
-                case "mult":
+                case "multiplication":
                     Console.WriteLine("The profuct of " + n1 + " and " + n2 + " is " + (n1 * n2));
                     break;
-                case "div":
+                case "division":
                     if(divByZero){
                         Console.WriteLine("Error: Division by zero.");
                     } else {
@@ -29,7 +29,7 @@ namespace Method2 {
                     }
                     break;
                 default:
-                    Console.WriteLine("Unknown arithmatic function.");
+                    Console.WriteLine("Unknown arithmetic function.");
                     break;
 
             }
@@ -62,7 +62,7 @@ namespace Method2 {
             }
             Console.WriteLine("Your Second Integer: " + n2);
             
-            Console.WriteLine("\nPlease Enter Your Arithmatic Operation(\"Add\", \"Sub\", \"Mul\", \"Div\"): ");
+            Console.WriteLine("\nPlease Enter Your Arithmetic Operation(\"Addition\", \"Subtraction\", \"Multiplication\", \"Division\"): ");
             func = Console.ReadLine();
 
             PrintMessage(n1, n2, func);
